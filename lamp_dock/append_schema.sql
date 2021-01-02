@@ -15,7 +15,7 @@ CREATE TABLE purchase (
 
 CREATE TABLE purchase_detail (
   purchase_detail_id  int(11) NOT NULL AUTO_INCREMENT,
-  prcie int(11) NOT NULL,
+  price int(11) NOT NULL,
   amount int (11) NOT NULL,
   item_id int(11) NOT NULL,
   purchase_id int(11) NOT NULL,

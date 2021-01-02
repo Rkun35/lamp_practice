@@ -42,7 +42,11 @@
       <?php } ?>
       </div>
     </div>
+    <h2>ランキング</h2>
+    <?php foreach($rank_list as $list){ ?>
+    <p><?php print(h($list['name'])); ?>個数：<?php print (h($list['amounts'])); ?></p>
+    <?php } ?>
   </div>
-  
+
 </body>
 </html>

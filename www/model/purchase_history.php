@@ -84,3 +84,23 @@ function get_purchase_detail($db, $purchase_id) {
   $params = array(':purchase_id' => $purchase_id);
   return fetch_all_query($db, $sql, $params);
 }
+
+function get_rank_list($db){
+  
+  $sql = "
+    SELECT
+      SUM(purchase_detail.amount) AS amounts,
+      items.name
+    FROM
+      purchase_detail
+    JOIN
+      items
+    ON purchase_detail.item_id = items.item_id
+    GROUP BY
+      purchase_detail.item_id
+    ORDER BY
+      amounts DESC
+    LIMIT 3; 
+  ";
+  return fetch_all_query($db, $sql);
+}
